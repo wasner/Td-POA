@@ -18,7 +18,7 @@ public class CompanySerializer {
     }
     
     public void retriveEmployees(){
-        System.out.println("Retriving employees");
+        System.out.println("Récupération des employés");
         try(InputStream is = new FileInputStream(getFileName());
                 ObjectInputStream ois = new ObjectInputStream(is)){
             
@@ -34,7 +34,7 @@ public class CompanySerializer {
     }
     
     public void saveEmployees(){
-        System.out.println("Saving employees");
+        System.out.println("Sauvegarde des employés");
         try(OutputStream os = new FileOutputStream(getFileName()); 
                 ObjectOutputStream oos = new ObjectOutputStream(os)){
             
