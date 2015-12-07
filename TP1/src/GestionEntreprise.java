@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Date;
 
 public class GestionEntreprise {
@@ -20,7 +21,9 @@ public class GestionEntreprise {
         for (Employe employe : myEntreprise.getEmployes()) {
             System.out.println(employe + " salaire : " + employe.salaireNet());
         }
-        
-        myEntreprise.distribuerBonus(20000);
+        JOptionPane jop = new JOptionPane();
+        String str = jop.showInputDialog(null, "Veuillez saisir le montant du bonus", "Bonus de l'entreprise", JOptionPane.QUESTION_MESSAGE);
+        int bonus = Integer.parseInt(str);
+        myEntreprise.distribuerBonus(bonus);
     }
 }
