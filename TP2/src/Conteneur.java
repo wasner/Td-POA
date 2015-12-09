@@ -24,7 +24,6 @@ public class Conteneur implements Serializable {
         this.destination = destination;
     }
 
-    public
 	
 	public String toString()
 	{
