@@ -27,7 +27,7 @@ public class Conteneur implements Serializable {
 	
 	public String toString()
 	{
-		return "Conteneur expédié par la société "+expediteur+" à destination de "+destination+" de poids "+poids;
+		return "Conteneur expédié par la société "+expediteur+" à destination de "+destination+" de poids "+poids+"kg";
 	}
 	
 }

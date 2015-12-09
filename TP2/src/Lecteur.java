@@ -9,8 +9,7 @@ public class Lecteur {
 	
 	public static Collection charger(String file)
 	{
-        Set<Conteneur> lesConteneurs=new TreeSet<Conteneur>();
-        Comparator<Conteneur> comparateur = new ComparateurConteneur();
+        Set<Conteneur> lesConteneurs=new TreeSet<Conteneur>(new ComparateurConteneur());
 	    ObjectInputStream ois=null;
 		try {
 	        FileInputStream fichier = new FileInputStream(file);
