@@ -1,11 +1,11 @@
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.TreeSet;
 
 
 public class GestionExpedition {
 	
 	public static void charger() {
-		ArrayList<Conteneur> ts=(ArrayList<Conteneur>)
+		TreeSet<Conteneur> ts=(TreeSet<Conteneur>)
 				Lecteur.charger("TP2/Conteneurs.ser");
 		
 		System.out.println("Liste des Conteneurs");
