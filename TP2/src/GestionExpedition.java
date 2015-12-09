@@ -18,6 +18,7 @@ public class GestionExpedition {
 		Chargement chargement = new Chargement(ts);
 		chargement.embarquer(new Conteneur ("Soc1",180,"Saint Maximin La Sainte Baume"));
 		chargement.afficheEmbarquement();
+		chargement.debarquer();
 		}
 
 
