@@ -5,7 +5,12 @@ public class Conteneur implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String expediteur;
-	private int poids;
+
+    public int getPoids() {
+        return poids;
+    }
+
+    private int poids;
 
     private String destination;
 	
