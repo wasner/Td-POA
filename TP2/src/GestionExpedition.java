@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class GestionExpeditions {
+public class GestionExpedition {
 	
 	public static void charger() {
 		ArrayList<Conteneur> ts=(ArrayList<Conteneur>)

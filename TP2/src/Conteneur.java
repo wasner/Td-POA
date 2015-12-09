@@ -6,7 +6,8 @@ public class Conteneur implements Serializable {
 	
 	private String expediteur;
 	private int poids;
-	private String destination;
+
+    private String destination;
 	
 	public Conteneur(String expediteur,int poids, String destination)
 	{
@@ -14,10 +15,20 @@ public class Conteneur implements Serializable {
 		this.poids=poids;
 		this.destination=destination;
 	}
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public
 	
 	public String toString()
 	{
-		return "Conteneur expédié par la société "+expediteur+" à destination de "+destination+" de poids "+poids;
+		return "Conteneur expÃ©diÃ© par la sociÃ©tÃ© "+expediteur+" Ã  destination de "+destination+" de poids "+poids;
 	}
 	
 }

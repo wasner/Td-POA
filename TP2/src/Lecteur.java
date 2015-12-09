@@ -2,15 +2,15 @@ import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
 
 public class Lecteur {
 	
 	public static Collection charger(String file)
 	{
-		ArrayList<Conteneur> lesConteneurs=new ArrayList<Conteneur>();
+        Set<Conteneur> lesConteneurs=new TreeSet<Conteneur>();
+        Comparator<Conteneur> comparateur;
 	    ObjectInputStream ois=null;
 		try {
 	        FileInputStream fichier = new FileInputStream(file);
