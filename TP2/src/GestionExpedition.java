@@ -34,6 +34,7 @@ public class GestionExpedition {
 			System.out.println(itp.next());
 
 		}
+		//Chargement ch1 = new Chargement(pq);
 
 
 
