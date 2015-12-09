@@ -6,19 +6,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
-public class CompanySerializer {
+public class SauvFichier {
     private Entreprise entreprise;
 
-    public CompanySerializer(Entreprise entreprise) {
+    public SauvFichier(Entreprise entreprise) {
         this.entreprise = entreprise;
     }
     
     private String getFileName(){
-        return entreprise.getNom() + ".data";
+        return entreprise.getNom() + ".txt";
     }
     
-    public void retriveEmployees(){
-        System.out.println("Récupération des employés");
+    public void recupEmploye(){
+        System.out.println("RÃ©cupÃ©ration des employÃ©s");
         try(InputStream is = new FileInputStream(getFileName());
                 ObjectInputStream ois = new ObjectInputStream(is)){
             
@@ -33,8 +33,8 @@ public class CompanySerializer {
         }
     }
     
-    public void saveEmployees(){
-        System.out.println("Sauvegarde des employés");
+    public void sauvEmploye(){
+        System.out.println("Sauvegarde des employÃ©s");
         try(OutputStream os = new FileOutputStream(getFileName()); 
                 ObjectOutputStream oos = new ObjectOutputStream(os)){
             
