@@ -21,6 +21,10 @@ public class ArbreBinaire<T> {
         return filsGauche;
     }
 
+    public ArbreBinaire<T> getPere() {
+        return pere;
+    }
+
     public ArbreBinaire<T> getFilsDroit() {
         return filsDroit;
     }

@@ -7,7 +7,13 @@ public class Client {
         ArbreBinaire<String> filsDroit  =     new ArbreBinaire<String>(null, null, "tata");
         ArbreBinaire<String> racine     =     new ArbreBinaire<String>(filsGauche, filsDroit, "toto");
     }
-    public ArbreBinaire<T> feuille(T mot){
-        return new ArbreBinaire<T>(null,null,null);
+
+    public ArbreBinaire<String> feuille(String mot){
+        return new ArbreBinaire<String>(null,null,null);
+    }
+    public void Imprimer(ArbreBinaire<String> arbre){
+        for (IterateurArbreBinaire it = new IterateurArbreBinaire(arbre); it.hasNext();){
+            System.out.println(it.next());
+        }
     }
 }
