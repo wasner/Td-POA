@@ -6,6 +6,7 @@ public class Client {
         ArbreBinaire<String> filsGauche =     new ArbreBinaire<String>(null,null,"titi");
         ArbreBinaire<String> filsDroit  =     new ArbreBinaire<String>(null, null, "tata");
         ArbreBinaire<String> racine     =     new ArbreBinaire<String>(filsGauche, filsDroit, "toto");
+
     }
 
     public ArbreBinaire<String> feuille(String mot){

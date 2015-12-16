@@ -27,7 +27,7 @@ public class IterateurArbreBinaire<T> implements Iterator<ArbreBinaire<T>> {
           }
            return arbre.getFilsGauche();
        }
-        return arbre.getPere();
+        return null;
     }
 
     @Override
