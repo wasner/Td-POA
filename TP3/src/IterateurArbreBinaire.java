@@ -31,7 +31,7 @@ public class IterateurArbreBinaire<T> implements Iterator<ArbreBinaire<T>> {
     }
 
     @Override
-    public Object next() {
+    public ArbreBinaire<T> next() {
         return null;
     }
 
