@@ -1,47 +1,45 @@
 import java.util.Iterator;
-import java.util.function.Consumer;
 
-/**
- * Created by w14007405 on 16/12/15.
- */
-public class IterateurArbreBinaire<T> implements Iterator<ArbreBinaire<T>> {
+public class IterateurArbreBinaire<T> implements Iterator<T>{
+	private ArbreBinaire<T> arbre;
 
-    private ArbreBinaire<T> arbre;
-    public IterateurArbreBinaire(ArbreBinaire<T> arbre) {
-        this.arbre = arbre;
-    }
+	public IterateurArbreBinaire(ArbreBinaire<T> arbre) {
+		this.arbre = arbre;
+	}
 
+	@Override
+	public boolean hasNext() {
+		return getNext() != null;
+	}
 
-    @Override
-    public boolean hasNext() {
-        return next() != null;
-    }
+	private ArbreBinaire<T> getNext(){
+		if(arbre.getDroit() != null){
+			ArbreBinaire<T> a = arbre.getDroit();
+			while(a.getGauche() != null){
+				a = a.getGauche();
+			}
 
-    private ArbreBinaire<T> getNext(ArbreBinaire<T> arbre){
-       if (arbre.getFilsDroit() != null) {
-           return getNext(arbre.getFilsDroit());
-       }
-       if (arbre.getPere() != null){
-          if(arbre.getPere().getFilsGauche().equals(this)){
-            return arbre.getPere();
-          }
-           return arbre.getFilsGauche();
-       }
-        return null;
-    }
+			return a;
+		}else{
+			ArbreBinaire<T> a = arbre;
 
-    @Override
-    public ArbreBinaire<T> next() {
-        return null;
-    }
+			while(a.getPere() != null && a == a.getPere().getDroit()){
+				a = a.getPere();
+			}
 
-    @Override
-    public void remove() {
+			return a.getPere();
+		}
+	}
 
-    }
+	@Override
+	public T next() {
+		arbre = getNext();
+		return arbre.getValue();
+	}
 
-    @Override
-    public void forEachRemaining(Consumer consumer) {
+	@Override
+	public void remove() {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
 
-    }
 }
