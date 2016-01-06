@@ -5,4 +5,9 @@ public class Radiateur implements Connectable {
     public Radiateur() {
         System.out.println("Le radiateur démarre");
     }
+
+    @Override
+    public void demarrer() {
+        System.out.println("Le radiateur démarre");
+    }
 }

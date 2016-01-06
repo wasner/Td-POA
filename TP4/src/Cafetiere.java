@@ -5,4 +5,9 @@ public class Cafetiere implements Connectable {
     public Cafetiere() {
         System.out.println("La cafetière démarre");
     }
+
+    @Override
+    public void demarrer() {
+        System.out.println("La cafetière démarre");
+    }
 }

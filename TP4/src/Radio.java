@@ -5,4 +5,9 @@ public class Radio implements Connectable{
     public Radio() {
         System.out.println("La radio démarre");
     }
+
+    @Override
+    public void demarrer() {
+        System.out.println("La radio démarre");
+    }
 }

@@ -3,4 +3,5 @@
  */
 public interface Connectable {
 
+    void demarrer();
 }
