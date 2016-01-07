@@ -20,4 +20,8 @@ public class Demarreur {
             object.demarrer();
         }
     }
+
+    public Connectable[] recupererAttacher() {
+        return new Connectable[0];
+    }
 }

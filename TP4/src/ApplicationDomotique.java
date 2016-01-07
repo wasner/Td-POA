@@ -10,7 +10,7 @@ import java.util.LinkedList;
  */
 public class ApplicationDomotique {
     static LinkedList<Connectable> liste = new LinkedList<>();
-    final static private Collection<Connectable> objets = new ArrayList<>();
+    final static private Collection<Connectable> collObjets = new ArrayList<>();
     final static private Demarreur demarreur = new Demarreur();
     private static String nomAppareil;
 
@@ -23,22 +23,33 @@ public class ApplicationDomotique {
             liste.add(c);
             System.out.println("Saisir un nouveau nom : ");*/
         for(String nomObj = inStream.readLine(); !nomObj.isEmpty(); nomObj = inStream.readLine()){
-            Connectable obj = fabrique.creer(nomObj);
-            if(obj != null)
-                objets.add(obj);
+            Connectable objetConnectable = fabrique.creer(nomObj);
+            if(objetConnectable != null)
+                collObjets.add(objetConnectable);
         }
-
         demarrerObjet();
+        demanderDetacher();
+        demarreur.demarrer();
+
 
   }
 
         static public void demarrerObjet() throws IOException{
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            for (Connectable objet : objets) {
-                System.out.println("Démarrer " + objet + " ? (o/n) ");
+            BufferedReader inStream = new BufferedReader(new InputStreamReader(System.in));
+            for (Connectable connectable : collObjets) {
+                System.out.println("Démarrer " + connectable + " ? (oui/non) ");
 
-                if(reader.readLine().toLowerCase().startsWith("o"))
-                    demarreur.attacher(objet);
+                if(inStream.readLine().startsWith("o"))
+                    demarreur.attacher(connectable);
             }
         }
+
+    static public void demanderDetacher() throws IOException {
+        BufferedReader inStream = new BufferedReader(new InputStreamReader(System.in));
+        for (Connectable connectable : demarreur.recupererAttacher()) {
+            System.out.println("Voulez-vous détacher " + connectable + " ? (oui/non)");
+            if(inStream.readLine().startsWith("o"))
+                demarreur.detacher(connectable);
+        }
+    }
 }
