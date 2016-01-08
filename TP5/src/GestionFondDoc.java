@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -8,7 +7,6 @@ import java.util.Map;
  */
 public class GestionFondDoc {
     private static Map<String, Document> mediatheque = new HashMap<>();
-    private ArrayList<Document> panier = new ArrayList<>();
 
     private static void constitution() {
         mediatheque.put("LI_ORW_1", new Livre("1984"));
@@ -20,14 +18,22 @@ public class GestionFondDoc {
 
     }
 
+    private static void emprunter(ArrayList<Document> panier) {
+        PolitiqueEmprunt politique = new EmpruntSelonTypeDoc();
+        for (Document doc : panier) {
+            doc.emprunter(politique);
+        }
+    }
+
     public static void main(String[] args) {
         GestionFondDoc.constitution();
+
         ArrayList<Document> panier = new ArrayList<>();
         panier.add(mediatheque.get("LI_ORW_1"));
         panier.add(mediatheque.get("CD_STO_1"));
         panier.add(mediatheque.get("FI_KUB_1"));
 
-        GestionFondDoc.emprunt(panier);
+        GestionFondDoc.emprunter(panier);
 
         for (Map.Entry<String, Document> entry : mediatheque.entrySet()) {
             System.out.println(entry.getKey() + " => " + entry.getValue());
@@ -35,9 +41,4 @@ public class GestionFondDoc {
 
     }
 
-    private static void emprunt(ArrayList<Document> panier) {
-        for (Document doc : panier) {
-            doc.setDateRetour(CalculDate.ajout(15));
-        }
-    }
 }

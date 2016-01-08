@@ -17,4 +17,9 @@ public class Livre extends Document {
             str += "n'est pas emprunté.";
         return str;
     }
+
+    @Override
+    public void emprunter(PolitiqueEmprunt politique) {
+        politique.emprunter(this);
+    }
 }

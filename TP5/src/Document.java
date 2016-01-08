@@ -20,4 +20,5 @@ public abstract class Document {
         this.dateRetour = dateRetour;
     } // setDateRetour()
 
+    public abstract void emprunter(PolitiqueEmprunt politique);
 }
