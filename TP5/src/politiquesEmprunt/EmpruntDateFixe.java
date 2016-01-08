@@ -1,4 +1,9 @@
-import java.util.ArrayList;
+package politiquesEmprunt;
+
+import TD5.CalculDate;
+import documents.CD;
+import documents.Film;
+import documents.Livre;
 
 /**
  * Created by w14007405 on 08/01/16.

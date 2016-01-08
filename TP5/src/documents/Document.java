@@ -1,3 +1,7 @@
+package documents;
+
+import politiquesEmprunt.PolitiqueEmprunt;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -10,7 +14,7 @@ public abstract class Document {
 
     public Document() {
         this.dateRetour = null;
-    } // Document()
+    } // documents.Document()
 
     public Date getDateRetour() {
         return dateRetour;

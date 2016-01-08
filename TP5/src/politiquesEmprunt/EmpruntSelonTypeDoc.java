@@ -1,3 +1,11 @@
+package politiquesEmprunt;
+
+import TD5.CalculDate;
+import documents.CD;
+import documents.Document;
+import documents.Film;
+import documents.Livre;
+
 import java.util.ArrayList;
 
 /**

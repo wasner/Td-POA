@@ -1,3 +1,5 @@
+package documents;
+
 /**
  * Created by w14007405 on 08/01/16.
  */
@@ -10,7 +12,7 @@ public class Livre extends Document {
 
     @Override
     public String toString() {
-        String str = "Livre " + titre +" : ";
+        String str = "documents.Livre " + titre +" : ";
         if (dateRetour != null)
             str += "est à rendre le " + dateRetour;
         else

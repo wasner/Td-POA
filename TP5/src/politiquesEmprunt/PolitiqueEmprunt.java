@@ -1,3 +1,9 @@
+package politiquesEmprunt;
+
+import documents.CD;
+import documents.Film;
+import documents.Livre;
+
 /**
  * Created by w14007405 on 08/01/16.
  */

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Created by jérémy on 07/01/2016.
+ * Created by jÃ©rÃ©my on 07/01/2016.
  */
 public class ApplicationAvecImprimantes {
     public static void main(String[] args){

@@ -1,3 +1,13 @@
+package TD5;
+
+import documents.CD;
+import documents.Document;
+import documents.Film;
+import documents.Livre;
+import emprunteurs.EmprunteurCarteMusique;
+import politiquesEmprunt.EmpruntDateFixeCarte;
+import politiquesEmprunt.PolitiqueEmprunt;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +29,7 @@ public class GestionFondDoc {
     }
 
     private static void emprunter(ArrayList<Document> panier) {
-        PolitiqueEmprunt politique = new EmpruntSelonTypeDoc();
+        PolitiqueEmprunt politique = new EmpruntDateFixeCarte(new EmprunteurCarteMusique());
         for (Document doc : panier) {
             doc.emprunter(politique);
         }
